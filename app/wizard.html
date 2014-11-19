@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation project</title>
+    <!-- build:css css/libraries.min.css-->
+    <!-- bower:css-->
+    <!-- endbower-->
+    <!-- endbuild-->
+    <!-- build:css css/app.min.css-->
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/app_override.css">
+    <!-- endbuild-->
+    <!-- build:js js/vendor/modernizr.min.js-->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild-->
+  </head>
+  <body>
+    <div data-magellan-expedition="fixed">
+      <dl class="right sub-nav">
+        <dd data-magellan-arrival="question01"><a href="#question01">Question One</a></dd>
+        <dd data-magellan-arrival="question02"><a href="#question02">Question two</a></dd>
+        <dd data-magellan-arrival="question03"><a href="#question03">Question three</a></dd>
+        <dd data-magellan-arrival="question04"><a href="#question04">Question four</a></dd>
+      </dl>
+    </div>
+    <form class="wizard inner-wrap"><a name="question01" data-magellan-destination="question01"></a>
+      <fieldset class="row">
+        <legend>1. Description</legend>
+        <p class="form-help">Make sure that the description contains the key characteristics / distinct features of the Technology, purpose, establishment / maintenance activities and inputs, most important conditions regarding natural / human environment) this summary has to provide a comprehensive / concise picture of the Technology to outsiders. After having gone through the whole questionnaire come back and revise / complement this section. Try to fill the grey shaded space but do not exceed.</p>
+        <textarea name="description" placeholder="Description of the SLM Technology" row="6" autofocus class="big"></textarea>
+      </fieldset><a name="question02" data-magellan-destination="question02"></a>
+      <fieldset class="row">
+        <legend>2. Objectives / purpose of the Technology</legend>
+        <p class="form-help">A single SLM Technology should cover a homogeneous set of natural (bio-physical) and human (socio-economic) conditions, hence should not be applied for instance to very dissimilar climatic or altitudinal zones or slope categories or to very dissimilar conditions of land tenure.</p>
+        <div class="row collapse">
+          <div class="small-1 columns"><span class="prefix">1.</span></div>
+          <div class="small-9 columns">
+            <input type="text">
+          </div>
+          <div class="small-2 columns"><a href="" class="right">remove</a></div>
+        </div>
+        <div class="row collapse">
+          <div class="small-1 columns"><span class="prefix">2.</span></div>
+          <div class="small-9 columns">
+            <input type="text">
+          </div>
+          <div class="small-2 columns"><a href="" class="right">remove</a></div>
+        </div>
+        <div class="row collapse">
+          <div class="small-1 columns"><span class="prefix">3.</span></div>
+          <div class="small-9 columns">
+            <input type="text">
+          </div>
+          <div class="small-2 columns"><a href="" class="right">remove</a></div>
+        </div><a href="">+ Add an objective</a>
+      </fieldset><a name="question03" data-magellan-destination="question03"></a>
+      <fieldset class="row">
+        <legend>3. Land Use</legend>
+        <div class="row">
+          <div class="small-3 columns"><span>Cropland</span><br><img src="images/1-01annual_crops.png" alt="Croplands"></div>
+          <div class="small-5 columns">
+            <div class="button-bar">
+              <ul class="multiple-choice button-group radius">
+                <li>
+                  <label href="#" class="tiny button secondary active"> 
+                    <input type="radio" name="importance01" value="none" checked><span>None</span>
+                  </label>
+                </li>
+                <li>
+                  <label href="#" class="tiny button secondary"> 
+                    <input type="radio" name="importance01" value="1"><span>Little</span>
+                  </label>
+                </li>
+                <li>
+                  <label href="#" class="tiny button secondary"> 
+                    <input type="radio" name="importance01" value="2"><span>Medium</span>
+                  </label>
+                </li>
+                <li>
+                  <label href="#" class="tiny button secondary"> 
+                    <input type="radio" name="importance01" value="3"><span>Hight</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="small-4 columns">
+            <input type="text" placeholder="Comment">
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-3 columns"><span>Grazing land</span><br><img src="images/1-04extensive_grazing.png" alt="Grazing"></div>
+          <div class="small-5 columns">
+            <div class="button-bar">
+              <ul class="multiple-choice button-group radius">
+                <li>
+                  <label href="#" class="tiny button secondary active"> 
+                    <input type="radio" name="importance02" value="none" checked><span>None</span>
+                  </label>
+                </li>
+                <li>
+                  <label href="#" class="tiny button secondary"> 
+                    <input type="radio" name="importance02" value="1"><span>Little</span>
+                  </label>
+                </li>
+                <li>
+                  <label href="#" class="tiny button secondary"> 
+                    <input type="radio" name="importance02" value="2"><span>Medium</span>
+                  </label>
+                </li>
+                <li>
+                  <label href="#" class="tiny button secondary"> 
+                    <input type="radio" name="importance02" value="3"><span>Hight</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="small-4 columns">
+            <input type="text" placeholder="Comment">
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-3 columns"><span>Forest/woodlands</span><br><img src="images/1-06forest.png" alt="Forest"></div>
+          <div class="small-5 columns">
+            <div class="button-bar">
+              <ul class="multiple-choice button-group radius">
+                <li>
+                  <label href="#" class="tiny button secondary active"> 
+                    <input type="radio" name="importance03" value="none" checked><span>None</span>
+                  </label>
+                </li>
+                <li>
+                  <label href="#" class="tiny button secondary"> 
+                    <input type="radio" name="importance03" value="1"><span>Little</span>
+                  </label>
+                </li>
+                <li>
+                  <label href="#" class="tiny button secondary"> 
+                    <input type="radio" name="importance03" value="2"><span>Medium</span>
+                  </label>
+                </li>
+                <li>
+                  <label href="#" class="tiny button secondary"> 
+                    <input type="radio" name="importance03" value="3"><span>Hight</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="small-4 columns">
+            <input type="text" placeholder="Comment">
+          </div>
+        </div>
+      </fieldset><a name="question04" data-magellan-destination="question04"></a>
+      <fieldset class="row">
+        <legend>4. Lorem</legend>
+        <p class="form-help">Make sure that the description contains the key characteristics / distinct features of the Technology, purpose, establishment / maintenance activities and inputs, most important conditions regarding natural / human environment) this summary has to provide a comprehensive / concise picture of the Technology to outsiders. After having gone through the whole questionnaire come back and revise / complement this section. Try to fill the grey shaded space but do not exceed.</p>
+        <textarea name="description" placeholder="Description of the SLM Technology" row="6" autofocus class="big"></textarea>
+      </fieldset>
+    </form>
+    <header class="wizard-header">
+      <div class="inner-wrap">
+        <div class="row">
+          <h2>Specification of SLM Best Pratice</h2><span>0 / 12 completed</span>
+          <div class="progress radius"><span style="width:1%" class="meter"></span></div><a href="index.html" data-toggle-boolean="section_one" class="button">I'm done</a>
+          <div class="right"><a href="" data-magellan-step="previous" class="button">△</a><a href="" data-magellan-step="next" class="button">▽</a></div>
+        </div>
+      </div>
+    </header>
+    <!-- build:js js/vendor/libraries.min.js-->
+    <!-- bower:js-->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- endbower-->
+    <!-- endbuild-->
+    <!-- build:js js/vendor/foundation.min.js-->
+    <script src="bower_components/foundation/js/foundation/foundation.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.abide.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.accordion.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.alert.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.clearing.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.dropdown.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.equalizer.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.interchange.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.joyride.js"></script>
+    <script src="js/wocat.magellan.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.offcanvas.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.orbit.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.reveal.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.slider.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.tab.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.tooltip.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.topbar.js"></script>
+    <!-- endbuild-->
+    <!-- build:js js/app.min.js-->
+    <script src="js/app.js"></script>
+    <!-- endbuild-->
+  </body>
+</html>

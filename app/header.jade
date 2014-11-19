@@ -1,13 +1,22 @@
-.row
-  .small-10.columns
+main.row
+  //- Cover image
   div.upload-container Upload your photo here
 
-  //- Title
-  form(role="form")
-    label(for="title") Title
-    input(name="title" type="text" placeholder="Name of the SLM Technology")
-    input(type="submit" value="save" data-toggle-boolean="titleGiven")
+  .panel
+    //- Title
+    form(role="form")
+      div.row.collapse
+        label(for="title") Title
+        div.small-10.columns
+          input(name="title" type="text" placeholder="Name of the SLM Technology" autofocus)
+        div.small-2.columns
+          input.button.postfix(type="submit" value="save" data-toggle-boolean="titleGiven")
 
-  //- Abstract
-  label(for="abstract") Abstract
-  textarea.form-control(name="abstract" type="text" placeholder="Definition of Technology in one sentance" row="4") 
+    //- Abstract
+    form(role="form")
+      div.row.collapse
+        label(for="abstract") Abstract
+        div.small-10.columns
+          textarea(name="abstract" type="text" placeholder="Definition of Technology in one sentance" row="6")
+        div.small-2.columns
+          input.button.postfix(type="submit" value="save" data-toggle-boolean="abstractGiven")

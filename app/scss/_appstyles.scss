@@ -14,7 +14,7 @@
     margin-top: 4em;
     opacity: 0.5;
   }
-  fieldset.active {
+  .active + fieldset {
     opacity: 1;
     border-width: 2px;
   }
@@ -38,6 +38,12 @@
 
   z-index: 999;
 }
+
+[data-magellan-expedition-clone],
+[data-magellan-expedition] {
+  display: none;
+}
+
 
 .form-help {
   font-style: italic;

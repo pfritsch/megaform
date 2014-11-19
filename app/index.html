@@ -25,21 +25,37 @@
             <li>...</li>
           </ol>
         </aside>
-        <div class="row">
-          <div class="small-10 columns"></div>
+        <main class="row">
           <div class="upload-container">Upload your photo here</div>
-          <form role="form">
-            <label for="title">Title</label>
-            <input name="title" type="text" placeholder="Name of the SLM Technology">
-            <input type="submit" value="save" data-toggle-boolean="titleGiven">
-          </form>
-          <label for="abstract">Abstract</label>
-          <textarea name="abstract" type="text" placeholder="Definition of Technology in one sentance" row="4" class="form-control"> </textarea>
-        </div>
+          <div class="panel">
+            <form role="form">
+              <div class="row collapse">
+                <label for="title">Title</label>
+                <div class="small-10 columns">
+                  <input name="title" type="text" placeholder="Name of the SLM Technology" autofocus>
+                </div>
+                <div class="small-2 columns">
+                  <input type="submit" value="save" data-toggle-boolean="titleGiven" class="button postfix">
+                </div>
+              </div>
+            </form>
+            <form role="form">
+              <div class="row collapse">
+                <label for="abstract">Abstract</label>
+                <div class="small-10 columns">
+                  <textarea name="abstract" type="text" placeholder="Definition of Technology in one sentance" row="6"></textarea>
+                </div>
+                <div class="small-2 columns">
+                  <input type="submit" value="save" data-toggle-boolean="abstractGiven" class="button postfix">
+                </div>
+              </div>
+            </form>
+          </div>
+        </main>
         <main class="row">
           <section>
             <h2>Specification of SLM Best Pratice</h2><span>0 / 12</span>
-            <div class="progress radius"><span style="width:1%" class="meter"></span></div><a href="">edit</a>
+            <div class="progress radius"><span style="width:1%" class="meter"></span></div><a href="wizard.html#question01" class="button">complete the form</a>
           </section>
         </main>
         <!-- build:js js/vendor/libraries.min.js-->
@@ -58,7 +74,7 @@
         <script src="bower_components/foundation/js/foundation/foundation.equalizer.js"></script>
         <script src="bower_components/foundation/js/foundation/foundation.interchange.js"></script>
         <script src="bower_components/foundation/js/foundation/foundation.joyride.js"></script>
-        <script src="bower_components/foundation/js/foundation/foundation.magellan.js"></script>
+        <script src="js/wocat.magellan.js"></script>
         <script src="bower_components/foundation/js/foundation/foundation.offcanvas.js"></script>
         <script src="bower_components/foundation/js/foundation/foundation.orbit.js"></script>
         <script src="bower_components/foundation/js/foundation/foundation.reveal.js"></script>
