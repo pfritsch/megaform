@@ -1,3 +1,4 @@
+
 template(name="section_one_preview")
   h2 Specification of SLM Best Pratice
   span 0 / 12
@@ -5,17 +6,26 @@ template(name="section_one_preview")
     span.meter(style="width:1%")
   a.button(href="wizard/section_one" data-toggle-boolean="section_one") complete the form
 
-
 template(name="section_one")
+  div(data-magellan-expedition="fixed")
+    dl
+      dd(data-magellan-arrival='question1')
+        a(href='#question1') Question One
+      dd(data-magellan-arrival='question2')
+        a(href='#question2') Question two
+      dd(data-magellan-arrival='question3')
+        a(href='#question3') Question three
+      
+
   form.wizard.inner-wrap
     
-    a(name="quest01")
+    +questionAnchor(id=1)
     fieldset.row.active
       legend 1. Description
       p.form-help Make sure that the description contains the key characteristics / distinct features of the Technology, purpose, establishment / maintenance activities and inputs, most important conditions regarding natural / human environment) this summary has to provide a comprehensive / concise picture of the Technology to outsiders. After having gone through the whole questionnaire come back and revise / complement this section. Try to fill the grey shaded space but do not exceed.
       textarea.big(name="description" placeholder="Description of the SLM Technology" row="6" autofocus)
       
-    a(name="quest02")
+    +questionAnchor(id=2)
     fieldset.row
       legend 2. Objectives / purpose of the Technology
       p.form-help A single SLM Technology should cover a homogeneous set of natural (bio-physical) and human (socio-economic) conditions, hence should not be applied for instance to very dissimilar climatic or altitudinal zones or slope categories or to very dissimilar conditions of land tenure.
@@ -42,7 +52,7 @@ template(name="section_one")
           a.right(href="") remove
       a(href="") + Add an objective
 
-    a(name="quest03")
+    +questionAnchor(id=3)
     fieldset.row
       legend 3. Land Use
       .row
@@ -124,17 +134,16 @@ template(name="section_one")
   header.wizard-header
     .inner-wrap
       .row
-        dl.right.sub-nav
-          dd(data-magellan-arrival='quest01')
-            a(href='#quest01') Question One
-          dd(data-magellan-arrival='quest02')
-            a(href='#quest02') Arrival 2
         h2 Specification of SLM Best Pratice
 
         span 0 / 12 completed
         div.progress.radius
-          span.meter(style="width:1%")
+          span.meter(style="width:25%")
         a.button(href="../index" data-toggle-boolean="section_one") I'm done
         .right
-          a.button(href="") △
-          a.button(href="") ▽
+          a.button(href="" data-magellan-step="previous") △
+          a.button(href="" data-magellan-step="next") ▽
+
+
+template(name="questionAnchor")
+  a(name="question{{id}}" data-magellan-destination="question{{id}}")

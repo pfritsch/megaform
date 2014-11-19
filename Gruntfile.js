@@ -76,6 +76,12 @@ module.exports = function(grunt) {
 				},{
 					expand: true,
 					cwd:'<%= app %>/',
+					src: ['js/wocat.magellan.js'],
+					dest: 'meteor/client/',
+					filter: 'isFile'
+				},{
+					expand: true,
+					cwd:'<%= app %>/',
 					src: ['css/*'],
 					dest: 'meteor/',
 					filter: 'isFile'
@@ -124,6 +130,10 @@ module.exports = function(grunt) {
 			sass: {
 				files: '<%= app %>/scss/**/*.scss',
 				tasks: ['sass', 'copy:meteor']
+			},
+			js: {
+				files: '<%= app %>/js/**/*.js',
+				tasks: ['copy:meteor']
 			},
 			jade: {
 				files: '<%= app %>/**/*.jade',

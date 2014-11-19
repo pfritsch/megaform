@@ -11,25 +11,15 @@ template(name="header")
       if titleGiven
         a.right(href="" data-toggle-boolean="titleGiven") Edit
         h1(data-toggle-boolean="titleGiven") {{field name="title" pick="Place your title here"}}
-      else
-        form(role="form")
-          div.row.collapse
-            label(for="title") Title
-            div.small-10.columns
-              input(name="title" type="text" placeholder="Name of the SLM Technology" autofocus)
-            div.small-2.columns
-              input.button.postfix(type="submit" value="save" data-toggle-boolean="titleGiven")
-
-
-      //- Abstract
-      if abstractGiven
-        a.right(href="" data-toggle-boolean="abstractGiven") Edit
         p {{abstract}}
+      
       else
         form(role="form")
-          div.row.collapse
-            label(for="abstract") Abstract
-            div.small-10.columns
-              textarea(name="abstract" type="text" placeholder="Definition of Technology in one sentance" row="6")
-            div.small-2.columns
-              input.button.postfix(type="submit" value="save" data-toggle-boolean="abstractGiven")
+          label(for="title") Title
+          input(name="title" type="text" placeholder="Name of the SLM Technology" value="{{title}}" autofocus)
+        
+          label(for="abstract") Abstract
+          textarea(name="abstract" type="text" placeholder="Definition of Technology in one sentance" row="6") {{abstract}}
+          
+          input.button.postfix(type="submit" value="save" data-toggle-boolean="titleGiven")
+

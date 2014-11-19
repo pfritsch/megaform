@@ -6287,10 +6287,10 @@ th.hide-for-touch {
 .upload-container {
   padding: 100px;
   text-align: center;
-  border: 3px dashed lightgray; }
+  border: 3px dashed #EEEEEE; }
 
 .wizard {
-  padding: 0 0 20em; }
+  padding: 0 0 40em; }
   .wizard fieldset {
     margin-top: 4em;
     opacity: 0.5; }
@@ -6305,12 +6305,33 @@ th.hide-for-touch {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #f5f5f5;
-  border-top: 1px solid lightgray;
+  background: #F5F5F5;
+  border-top: 1px solid #EEEEEE;
   z-index: 999; }
 
-[data-magellan-expedition-clone], [data-magellan-expedition] {
+[data-magellan-expedition-clone] {
   display: none; }
+
+[data-magellan-expedition], [data-magellan-expedition-clone] {
+  right: 0;
+  left: auto;
+  width: auto;
+  min-width: 0;
+  background: none; }
+
+[data-magellan-expedition] dl {
+  margin: 0; }
+[data-magellan-expedition] dd a {
+  display: block;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.5em;
+  background: #EEEEEE; }
+[data-magellan-expedition] dd.active a {
+  background: #008CBA; }
 
 .form-help {
   font-style: italic;
