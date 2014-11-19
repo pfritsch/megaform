@@ -1,0 +1,13 @@
+.row
+  .small-10.columns
+  div.upload-container Upload your photo here
+
+  //- Title
+  form(role="form")
+    label(for="title") Title
+    input(name="title" type="text" placeholder="Name of the SLM Technology")
+    input(type="submit" value="save" data-toggle-boolean="titleGiven")
+
+  //- Abstract
+  label(for="abstract") Abstract
+  textarea.form-control(name="abstract" type="text" placeholder="Definition of Technology in one sentance" row="4") 

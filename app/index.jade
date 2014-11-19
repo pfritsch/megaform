@@ -1,0 +1,18 @@
+doctype html
+html(class="no-js", lang="en")
+  include head
+  body
+    div.off-canvas-wrap(data-offcanvas="true")
+      div.inner-wrap
+
+        a.left-off-canvas-toggle(href="#") Menu
+
+        aside.left-off-canvas-menu
+          ol
+            li
+              a(href="#") Section
+            li ...
+        
+        include header
+        include main
+        include footer

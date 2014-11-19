@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation project</title>
+    <!-- build:css css/libraries.min.css-->
+    <!-- bower:css-->
+    <!-- endbower-->
+    <!-- endbuild-->
+    <!-- build:css css/app.min.css-->
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/app_override.css">
+    <!-- endbuild-->
+    <!-- build:js js/vendor/modernizr.min.js-->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild-->
+  </head>
+  <body>
+    <div data-offcanvas="true" class="off-canvas-wrap">
+      <div class="inner-wrap"><a href="#" class="left-off-canvas-toggle">Menu</a>
+        <aside class="left-off-canvas-menu">
+          <ol>
+            <li><a href="#">Section</a></li>
+            <li>...</li>
+          </ol>
+        </aside>
+        <div class="row">
+          <div class="small-10 columns"></div>
+          <div class="upload-container">Upload your photo here</div>
+          <form role="form">
+            <label for="title">Title</label>
+            <input name="title" type="text" placeholder="Name of the SLM Technology">
+            <input type="submit" value="save" data-toggle-boolean="titleGiven">
+          </form>
+          <label for="abstract">Abstract</label>
+          <textarea name="abstract" type="text" placeholder="Definition of Technology in one sentance" row="4" class="form-control"> </textarea>
+        </div>
+        <main class="row">
+          <section>
+            <h2>Specification of SLM Best Pratice</h2><span>0 / 12</span>
+            <div class="progress radius"><span style="width:1%" class="meter"></span></div><a href="">edit</a>
+          </section>
+        </main>
+        <!-- build:js js/vendor/libraries.min.js-->
+        <!-- bower:js-->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/fastclick/lib/fastclick.js"></script>
+        <!-- endbower-->
+        <!-- endbuild-->
+        <!-- build:js js/vendor/foundation.min.js-->
+        <script src="bower_components/foundation/js/foundation/foundation.js"></script>
+        <script src="bower_components/foundation/js/foundation/foundation.abide.js"></script>
+        <script src="bower_components/foundation/js/foundation/foundation.accordion.js"></script>
+        <script src="bower_components/foundation/js/foundation/foundation.alert.js"></script>
+        <script src="bower_components/foundation/js/foundation/foundation.clearing.js"></script>
+        <script src="bower_components/foundation/js/foundation/foundation.dropdown.js"></script>
+        <script src="bower_components/foundation/js/foundation/foundation.equalizer.js"></script>
+        <script src="bower_components/foundation/js/foundation/foundation.interchange.js"></script>
+        <script src="bower_components/foundation/js/foundation/foundation.joyride.js"></script>
+        <script src="bower_components/foundation/js/foundation/foundation.magellan.js"></script>
+        <script src="bower_components/foundation/js/foundation/foundation.offcanvas.js"></script>
+        <script src="bower_components/foundation/js/foundation/foundation.orbit.js"></script>
+        <script src="bower_components/foundation/js/foundation/foundation.reveal.js"></script>
+        <script src="bower_components/foundation/js/foundation/foundation.slider.js"></script>
+        <script src="bower_components/foundation/js/foundation/foundation.tab.js"></script>
+        <script src="bower_components/foundation/js/foundation/foundation.tooltip.js"></script>
+        <script src="bower_components/foundation/js/foundation/foundation.topbar.js"></script>
+        <!-- endbuild-->
+        <!-- build:js js/app.min.js-->
+        <script src="js/app.js"></script>
+        <!-- endbuild-->
+      </div>
+    </div>
+  </body>
+</html>
