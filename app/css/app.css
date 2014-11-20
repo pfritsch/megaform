@@ -6319,19 +6319,22 @@ th.hide-for-touch {
   min-width: 0;
   background: none; }
 
-[data-magellan-expedition] dl {
-  margin: 0; }
-[data-magellan-expedition] dd a {
-  display: block;
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 1em;
-  height: 1em;
-  border-radius: 0.5em;
-  background: #EEEEEE; }
-[data-magellan-expedition] dd.active a {
-  background: #008CBA; }
+[data-magellan-expedition] {
+  position: fixed;
+  top: 0px; }
+  [data-magellan-expedition] dl {
+    margin: 0; }
+  [data-magellan-expedition] dd a {
+    display: block;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+    border-radius: 0.5em;
+    background: #EEEEEE; }
+  [data-magellan-expedition] dd.active a {
+    background: #008CBA; }
 
 .form-help {
   font-style: italic;
@@ -6339,3 +6342,6 @@ th.hide-for-touch {
 
 textarea.big {
   min-height: 12em; }
+
+.progress {
+  border-color: #CCCCCC; }

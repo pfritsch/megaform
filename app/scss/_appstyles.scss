@@ -51,6 +51,8 @@
   background: none;
 }
 [data-magellan-expedition] {
+  position: fixed;
+  top: 0px;
   dl {
     margin: 0;
   }
@@ -77,4 +79,8 @@
 }
 textarea.big {
   min-height: 12em;
+}
+
+.progress {
+  border-color: $iron;
 }

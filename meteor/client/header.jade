@@ -1,0 +1,25 @@
+template(name="header")
+  +collection(name="header" create="1")
+    //- Cover image
+    if coverGiven
+      img(src="http://placehold.it/800x200", alt="Cover Image")
+    else
+      div.upload-container Upload your photo here
+
+    .panel
+      //- Title
+      if titleGiven
+        a.right(href="" data-toggle-boolean="titleGiven") Edit
+        h1(data-toggle-boolean="titleGiven") {{field name="title" pick="Place your title here"}}
+        p {{abstract}}
+      
+      else
+        form(role="form")
+          label(for="title") Title
+          input(name="title" type="text" placeholder="Name of the SLM Technology" value="{{title}}" autofocus)
+        
+          label(for="abstract") Abstract
+          textarea(name="abstract" type="text" placeholder="Definition of Technology in one sentance" row="6") {{abstract}}
+          
+          input.button.postfix(type="submit" value="save" data-toggle-boolean="titleGiven")
+
