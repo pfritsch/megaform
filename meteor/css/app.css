@@ -6290,7 +6290,7 @@ th.hide-for-touch {
   border: 3px dashed #EEEEEE; }
 
 .wizard {
-  padding: 0 0 40em; }
+  padding: 0 0 100em; }
   .wizard fieldset {
     margin-top: 4em;
     opacity: 0.5; }

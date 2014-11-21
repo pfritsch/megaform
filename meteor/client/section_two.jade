@@ -19,9 +19,15 @@ template(name="section_two")
   form.wizard.inner-wrap
 
     +questionAnchor(id=1)
+    fieldset.row.active
+      legend 1. Lorem ipsum
+      p.form-help Make sure that the description contains the key characteristics / distinct features of the Technology, purpose, establishment / maintenance activities and inputs, most important conditions regarding natural / human environment) this summary has to provide a comprehensive / concise picture of the Technology to outsiders. After having gone through the whole questionnaire come back and revise / complement this section. Try to fill the grey shaded space but do not exceed.
+      textarea.big(id="description" name="description" placeholder="Description of the SLM Technology" row="6" autofocus)
+
+    +questionAnchor(id=2)
     fieldset.row
       legend Ecological benefits
-      p.form-helper Negligible, little, medium and high are arbitrary terms. Negligible can mean „no significant benefit” or even a disadvantage. In case of a disadvantage provide details in 3.1.3 and 3.1.4. Make use of the specify/remarks/comments column to show evidence and justify your selection as much as possible. 10% increase (eg of yield) might be judged as a great improvement, nevertheless tick the category little (5-20%), and use “specify / comments” to explain. Only indicate quantity (before/after) if impacts are measured / based on surveys 
+      p.form-help Negligible, little, medium and high are arbitrary terms. Negligible can mean „no significant benefit” or even a disadvantage. In case of a disadvantage provide details in 3.1.3 and 3.1.4. Make use of the specify/remarks/comments column to show evidence and justify your selection as much as possible. 10% increase (eg of yield) might be judged as a great improvement, nevertheless tick the category little (5-20%), and use “specify / comments” to explain. Only indicate quantity (before/after) if impacts are measured / based on surveys 
       +collection(name="impacts" create="0")
         +questionTypeA
 
