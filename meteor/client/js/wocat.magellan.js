@@ -56,6 +56,60 @@
             }
           });
         })
+
+        //  Animate the arrows
+        .on('click.fndtn.magellan', '[' + self.add_namespace('data-magellan-step') + ']', function (e) {
+          e.preventDefault();
+          var expedition = $(this).closest('[' + self.attr_name() + ']'),
+              settings = expedition.data('magellan-expedition-init'),
+              hash = this.hash.split('#').join(''),
+              target = $("a[name='"+hash+"']");
+
+          if (target.length != 0) {
+            
+            // Account for expedition height if fixed position
+            var scroll_top = target.offset().top - 20 + 1;
+            scroll_top = scroll_top - expedition.outerHeight();
+
+            $('html, body').stop().animate({
+              'scrollTop': scroll_top
+            }, 700, 'swing', function () {
+              if(history.pushState) {
+                history.pushState(null, null, '#'+hash);
+              }
+              else {
+                location.hash = '#'+hash;
+              }
+            });
+          }
+
+        })
+        .on('focus.fndtn.magellan', '[input]', function (e) {
+          e.preventDefault();
+          var expedition = $(this).closest('[' + self.attr_name() + ']'),
+              settings = expedition.data('magellan-expedition-init'),
+              hash = this.hash.split('#').join(''),
+              target = $("a[name='"+hash+"']");
+
+          if (target.length != 0) {
+            
+            // Account for expedition height if fixed position
+            var scroll_top = target.offset().top - 20 + 1;
+            scroll_top = scroll_top - expedition.outerHeight();
+
+            $('html, body').stop().animate({
+              'scrollTop': scroll_top
+            }, 700, 'swing', function () {
+              if(history.pushState) {
+                history.pushState(null, null, '#'+hash);
+              }
+              else {
+                location.hash = '#'+hash;
+              }
+            });
+          }
+
+        })
         .on('scroll.fndtn.magellan', self.throttle(this.check_for_arrivals.bind(this), settings.throttle_delay));
 
       $(window)

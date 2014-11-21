@@ -12,7 +12,7 @@ Template.section_one.helpers({
 Session.set("stepCompleted", 0);
 
 Template.section_one.events({
-  "blur textarea, blur input, change checkbox": function (event, template) {
+  "blur textarea, blur input[type='text'], change checkbox": function (event, template) {
     var content = event.target.value;
     var step = Session.get('stepCompleted');
     if(content != '' && step < 3) {

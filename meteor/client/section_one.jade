@@ -6,7 +6,6 @@ template(name="section_one_preview")
     span.meter(style="width:0%")
   a.button(href="wizard/section_one#question1" data-toggle-boolean="section_one") complete the form
 
-
 template(name="section_one")
   div(data-magellan-expedition="fixed")
     dl
@@ -29,28 +28,16 @@ template(name="section_one")
     fieldset.row
       legend 2. Objectives / purpose of the Technology
       p.form-help A single SLM Technology should cover a homogeneous set of natural (bio-physical) and human (socio-economic) conditions, hence should not be applied for instance to very dissimilar climatic or altitudinal zones or slope categories or to very dissimilar conditions of land tenure.
-      .row.collapse
-        .small-1.columns
-          span.prefix 1.
-        .small-9.columns
-          input(type='text')
-        .small-2.columns
-          a.right(href="") remove
-      .row.collapse
-        .small-1.columns
-          span.prefix 2.
-        .small-9.columns
-          input(type='text')
-        .small-2.columns
-          a.right(href="") remove
-      .row.collapse
-        .small-1.columns
-          span.prefix 3.
-        .small-9.columns
-          input(type='text')
-        .small-2.columns
-          a.right(href="") remove
-      a(href="") + Add an objective
+      +collection(name="objectives" create="3")
+        .row.collapse
+          .small-1.columns
+            span.prefix {{index}}
+          .small-9.columns
+            input(type='text' data-save-onBlur="" name="description" value=description)
+          .small-2.columns
+            a.right(data-remove-this="") remove
+      form(data-collection="objectives")
+        input.button.small(type="submit" value="+ Add")
 
     +questionAnchor(id=3)
     fieldset.row
@@ -141,7 +128,7 @@ template(name="section_one")
         a.button(href="../index" data-toggle-boolean="section_one") I'm done
         .right
           a.button(href="" data-magellan-step="previous") △
-          a.button(href="" data-magellan-step="next") ▽
+          a.button(href="#question1" data-magellan-step="next") ▽
 
 
 template(name="questionAnchor")
