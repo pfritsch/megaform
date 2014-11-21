@@ -1,0 +1,66 @@
+
+template(name="section_two_preview")
+  h2 2. Technical drawing
+  span 0 / 5
+  div.progress.radius
+    span.meter(style="width:0%")
+  a.button(href="wizard/section_two#question1" data-toggle-boolean="section_two") complete the form
+
+template(name="section_two")
+  div(data-magellan-expedition="fixed")
+    dl
+      dd(data-magellan-arrival='question1')
+        a(href='#question1') Question One
+      dd(data-magellan-arrival='question2')
+        a(href='#question2') Question two
+      dd(data-magellan-arrival='question3')
+        a(href='#question3') Question three
+
+  form.wizard.inner-wrap
+
+    +questionAnchor(id=1)
+    fieldset.row
+      legend Ecological benefits
+      p.form-helper Negligible, little, medium and high are arbitrary terms. Negligible can mean „no significant benefit” or even a disadvantage. In case of a disadvantage provide details in 3.1.3 and 3.1.4. Make use of the specify/remarks/comments column to show evidence and justify your selection as much as possible. 10% increase (eg of yield) might be judged as a great improvement, nevertheless tick the category little (5-20%), and use “specify / comments” to explain. Only indicate quantity (before/after) if impacts are measured / based on surveys 
+      +collection(name="impacts" create="0")
+        +questionTypeA
+
+
+  header.wizard-header
+    .inner-wrap
+      .row
+        h2 2. Technical drawing
+        span {{stepCompleted}} / 3 completed
+        div.progress.radius
+          span.meter(style="width:{{progress 3}}%")
+        a.button(href="../index" data-toggle-boolean="section_one") I'm done
+        .right
+          a.button(href="" data-magellan-step="previous") △
+          a.button(href="#question1" data-magellan-step="next") ▽
+
+
+template(name="questionTypeA")
+  .row
+    .small-3.columns
+      span {{label}}
+    .small-5.columns
+      .button-bar
+        ul.multiple-choice.button-group.radius
+          li
+            label.tiny.button.secondary.active(href='#') 
+              input(type="radio" name="{{_id}}" value="none" checked)
+              span None
+          li
+            label.tiny.button.secondary(href='#') 
+              input(type="radio" name="{{_id}}" value="1")
+              span Little
+          li
+           label.tiny.button.secondary(href='#') 
+              input(type="radio" name="{{_id}}" value="2")
+              span Medium
+          li
+            label.tiny.button.secondary(href='#') 
+              input(type="radio" name="{{_id}}" value="3")
+              span Hight
+    .small-4.columns
+      input(type="text" placeholder="Comment")

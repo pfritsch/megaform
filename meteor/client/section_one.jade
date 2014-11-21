@@ -1,9 +1,9 @@
 
 template(name="section_one_preview")
-  h2 Specification of SLM Best Pratice
-  span 0 / 12
+  h2 1. Specification of SLM Best Pratice
+  span 2 / 3
   div.progress.radius
-    span.meter(style="width:0%")
+    span.meter(style="width:66%")
   a.button(href="wizard/section_one#question1" data-toggle-boolean="section_one") complete the form
 
 template(name="section_one")
@@ -121,7 +121,7 @@ template(name="section_one")
   header.wizard-header
     .inner-wrap
       .row
-        h2 Specification of SLM Best Pratice
+        h2 1. Specification of SLM Best Pratice
         span {{stepCompleted}} / 3 completed
         div.progress.radius
           span.meter(style="width:{{progress 3}}%")
