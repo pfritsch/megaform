@@ -6292,13 +6292,46 @@ th.hide-for-touch {
 .wizard {
   padding: 0 0 100em; }
   .wizard fieldset {
-    margin-top: 4em;
-    opacity: 0.5; }
+    margin-top: 4em; }
   .wizard .active + fieldset {
     opacity: 1;
     border-width: 2px; }
   .wizard .multiple-choice input[type="file"], .wizard .multiple-choice input[type="checkbox"], .wizard .multiple-choice input[type="radio"], .wizard .multiple-choice select {
     margin: 0; }
+
+.multiple-choice > input {
+  display: none; }
+
+.item {
+  position: relative; }
+
+.item:before {
+  content: " ";
+  display: block;
+  width: 30px;
+  height: 30px;
+  color: green;
+  position: absolute;
+  top: 0;
+  left: -2em;
+  background: white;
+  border: 1px solid #EEEEEE;
+  border-radius: 15px;
+  text-align: center; }
+
+.item.is-selected:before {
+  content: "✔";
+  display: block;
+  width: 30px;
+  height: 30px;
+  color: green;
+  position: absolute;
+  top: 0;
+  left: -2em;
+  background: white;
+  border: 1px solid #EEEEEE;
+  border-radius: 15px;
+  text-align: center; }
 
 .wizard-header {
   position: fixed;
@@ -6337,8 +6370,19 @@ th.hide-for-touch {
     background: #008CBA; }
 
 .form-help {
-  font-style: italic;
-  font-size: 0.85em; }
+  font-size: 0.85em;
+  background-color: #EEEEEE;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  position: relative;
+  padding-left: 2em; }
+
+.form-help:before {
+  content: "ℹ";
+  position: absolute;
+  top: 0;
+  left: 0.5em;
+  font-size: 1.5em; }
 
 textarea.big {
   min-height: 12em; }

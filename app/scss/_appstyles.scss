@@ -12,7 +12,7 @@
 
   fieldset {
     margin-top: 4em;
-    opacity: 0.5;
+    // opacity: 0.5;
   }
   .active + fieldset {
     opacity: 1;
@@ -28,6 +28,45 @@
     }
   }
 }
+
+.multiple-choice > input {
+  display: none;
+}
+
+.item {
+  position: relative;
+
+  
+}
+.item:before {
+  content: " ";
+  display: block;
+  width: 30px;
+  height: 30px;
+  color: green;
+  position: absolute;
+  top: 0;
+  left: -2em;
+  background: white;
+  border: 1px solid $smoke;
+  border-radius: 15px;
+  text-align: center;
+}
+.item.is-selected:before {
+  content: "✔";
+  display: block;
+  width: 30px;
+  height: 30px;
+  color: green;
+  position: absolute;
+  top: 0;
+  left: -2em;
+  background: white;
+  border: 1px solid $smoke;
+  border-radius: 15px;
+  text-align: center;
+}
+
 .wizard-header {
   position: fixed;
   bottom: 0;
@@ -74,8 +113,20 @@
 }
 
 .form-help {
-  font-style: italic;
   font-size: 0.85em;
+  background-color: $smoke;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  position: relative;
+  padding-left: 2em;
+}
+
+.form-help:before {
+  content: "ℹ";
+  position: absolute;
+  top: 0;
+  left: 0.5em;
+  font-size: 1.5em;
 }
 textarea.big {
   min-height: 12em;

@@ -1,0 +1,353 @@
+
+template(name="form_guideline_preview")
+  h2 Form Guideline
+  span 2 / 3
+  div.progress.radius
+    span.meter(style="width:66%")
+  a.button(href="wizard/form_guideline#question1" data-toggle-boolean="form_guideline") complete the form
+
+template(name="form_guideline")
+  div(data-magellan-expedition="fixed")
+    dl
+      dd(data-magellan-arrival='question1')
+        a(href='#question1') Question One
+      dd(data-magellan-arrival='question2')
+        a(href='#question2') Question two
+      dd(data-magellan-arrival='question3')
+        a(href='#question3') Question three
+
+  form.wizard.inner-wrap
+    
+    +questionAnchor(id=1)
+    fieldset.row.active
+      legend Structure
+      
+      h3 Groups
+      p All questions should be grouped in question groups.
+
+
+          
+
+    +questionAnchor(id=2)
+    fieldset.row
+      legend Help instructions
+      
+      h3 Instructions
+      p.form-help It's always better with clear instructions. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil sequi amet nemo, dignissimos ipsum! Corrupti voluptatum magni exercitationem autem tenetur, animi veniam fuga, esse nesciunt velit cum ut eligendi quia.
+
+      h3 Tooltip
+      label <span data-tooltip aria-haspopup="true" class="has-tip" title="Tooltips are awesome, you should totally use them!">Additional information on a label ⓘ</span> 
+      
+
+
+    +questionAnchor(id=3)
+    fieldset.row
+      legend Simple inputs
+
+      h3 Long question
+      label(for='input-text') If you have a really long question, use top label.
+      input#input-text(type='text', placeholder='Text Input')
+
+      h3 Short question
+      .row
+        .small-3.columns
+          label.right.inline(for='right-label') For short questions
+        |       
+        .small-9.columns
+          input#right-label(type='text', placeholder='Inline Text Input')
+
+      h3 Long answer
+      label(for="textarea") Long answers need textarea.
+      p.form-help Specific instructions can be added to any question.
+      textarea#textarea(rows="6")
+
+      h3 Input with propositions
+      label(for="#input-data") Country
+      input#input-data(type='text', list="countries", placeholder='Select or type a Country name')
+      datalist#countries
+        +repeat(with="United States of America,Afghanistan,Albania,Algeria,Andorra,Angola,Antigua & Deps,Argentina,Armenia,Australia,Austria,Azerbaijan,Bahamas,Bahrain,Bangladesh,Barbados,Belarus,Belgium,Belize,Benin,Bhutan,Bolivia,Bosnia Herzegovina,Botswana,Brazil,Brunei,Bulgaria,Burkina,Burma,Burundi,Cambodia,Cameroon,Canada,Cape Verde,Central African Rep,Chad,Chile,People's Republic of China,Republic of China,Colombia,Comoros,Democratic Republic of the Congo,Republic of the Congo,Costa Rica,, Croatia,Cuba,Cyprus,Czech Republic,Danzig,Denmark,Djibouti,Dominica,Dominican Republic,East Timor,Ecuador,Egypt,El Salvador,Equatorial Guinea,Eritrea,Estonia,Ethiopia,Fiji,Finland,France,Gabon,Gaza Strip,The Gambia,Georgia,Germany,Ghana,Greece,Grenada,Guatemala,Guinea,Guinea-Bissau,Guyana,Haiti,Holy Roman Empire,Honduras,Hungary,Iceland,India,Indonesia,Iran,Iraq,Republic of Ireland,Israel,Italy,Ivory Coast,Jamaica,Japan,Jonathanland,Jordan,Kazakhstan,Kenya,Kiribati,North Korea,South Korea,Kosovo,Kuwait,Kyrgyzstan,Laos,Latvia,Lebanon,Lesotho,Liberia,Libya,Liechtenstein,Lithuania,Luxembourg,Macedonia,Madagascar,Malawi,Malaysia,Maldives,Mali,Malta,Marshall Islands,Mauritania,Mauritius,Mexico,Micronesia,Moldova,Monaco,Mongolia,Montenegro,Morocco,Mount Athos,Mozambique,Namibia,Nauru,Nepal,Newfoundland,Netherlands,New Zealand,Nicaragua,Niger,Nigeria,Norway,Oman,Ottoman Empire,Pakistan,Palau,Panama,Papua New Guinea,Paraguay,Peru,Philippines,Poland,Portugal,Prussia,Qatar,Romania,Rome,Russian Federation,Rwanda,St Kitts & Nevis,St Lucia,Saint Vincent & the,Grenadines,Samoa,San Marino,Sao Tome & Principe,Saudi Arabia,Senegal,Serbia,Seychelles,Sierra Leone,Singapore,Slovakia,Slovenia,Solomon Islands,Somalia,South Africa,Spain,Sri Lanka,Sudan,Suriname,Swaziland,Sweden,Switzerland,Syria,Tajikistan,Tanzania,Thailand,Togo,Tonga,Trinidad & Tobago,Tunisia,Turkey,Turkmenistan,Tuvalu,Uganda,Ukraine,United Arab Emirates,United Kingdom,Uruguay,Uzbekistan,Vanuatu,Vatican City,Venezuela,Vietnam,Yemen,Zambia,Zimbabwe")
+          option(value=this)
+
+
+    +questionAnchor(id=4)
+    fieldset.row
+      legend Simple choice
+
+      h3 Single choice   
+      label Boolean question
+      |           
+      input#pokemonRed(type='radio', name='pokemon', value='Red', checked)
+      label(for='pokemonRed') Yes
+      |           
+      input#pokemonBlue(type='radio', name='pokemon', value='Blue')
+      label(for='pokemonBlue') No
+      
+      h3 multiple choice
+      .row
+        .large-3.columns           
+          input#checkbox1(type='checkbox')
+          label(for='checkbox1') Checkbox 1
+          br
+          input#checkbox2(type='checkbox')
+          label(for='checkbox2') Checkbox 2    
+        .large-3.columns
+          input#checkbox3(type='checkbox')
+          label(for='checkbox3') Checkbox 3
+          br
+          input#checkbox4(type='checkbox')
+          label(for='checkbox4') Checkbox 4
+        .large-3.columns
+          input#checkbox5(type='checkbox')
+          label(for='checkbox5') Checkbox 5
+          br
+          input#checkbox6(type='checkbox')
+          label(for='checkbox6') Checkbox 6
+        .large-3.columns
+          input#checkbox7(type='checkbox')
+          label(for='checkbox7') Checkbox 7
+          br
+          input#checkbox8(type='checkbox')
+          label(for='checkbox8') Checkbox 8
+          
+
+          
+    +questionAnchor(id=5)
+    fieldset.row
+      legend Qualifying
+      p.form-help Rows that have a meaningful value are highlighted. additional Comments and choices are only available, if a meaningful value is selected.
+      .row
+        .small-3.columns
+          &nbsp;
+        .small-9.columns
+          label Importance
+      .row.item
+        .small-3.columns
+          span Item one description
+        .small-9.columns
+          .button-bar
+            ul.multiple-choice.button-group.radius
+              li
+                label.tiny.button.secondary.active(href='#') 
+                  input(type="radio" name="importance01" value="none" checked)
+                  span None
+              li
+                label.tiny.button.secondary(href='#') 
+                  input(type="radio" name="importance01" value="1")
+                  span Little
+              li
+               label.tiny.button.secondary(href='#') 
+                  input(type="radio" name="importance01" value="2")
+                  span Medium
+              li
+                label.tiny.button.secondary(href='#') 
+                  input(type="radio" name="importance01" value="3")
+                  span High
+
+      .row.item.is-selected
+        .small-3.columns
+          span Item two / selected
+        .small-9.columns
+          .button-bar
+            ul.multiple-choice.button-group.radius
+              li
+                label.tiny.button.secondary.active(href='#') 
+                  input(type="radio" name="importance02" value="none" checked)
+                  span None
+              li
+                label.tiny.button.secondary(href='#') 
+                  input(type="radio" name="importance02" value="1")
+                  span Little
+              li.is-selected
+               label.tiny.button.secondary(href='#') 
+                  input(type="radio" name="importance02" value="2" checked)
+                  span Medium
+              li
+                label.tiny.button.secondary(href='#') 
+                  input(type="radio" name="importance02" value="3")
+                  span High
+
+      .row.item.is-selected
+        .small-3.columns
+          span Item three / with comment
+        .small-5.columns
+          .button-bar
+            ul.multiple-choice.button-group.radius
+              li
+                label.tiny.button.secondary.active(href='#') 
+                  input(type="radio" name="importance03" value="none" checked)
+                  span None
+              li
+                label.tiny.button.secondary(href='#') 
+                  input(type="radio" name="importance03" value="1")
+                  span Little
+              li
+               label.tiny.button.secondary(href='#') 
+                  input(type="radio" name="importance03" value="2")
+                  span Medium
+              li
+                label.tiny.button.secondary(href='#') 
+                  input(type="radio" name="importance03" value="3" checked)
+                  span Hight
+        .small-4.columns
+          input(type="text" placeholder="Comment")
+
+
+      .row.item.is-selected
+        .small-3.columns
+          span Item four / with big comment
+        .small-9.columns
+          .button-bar
+            ul.multiple-choice.button-group.radius
+              +buttonBarItem(inputLabel="none" inputName="item4" inputChecked="")
+              +buttonBarItem(inputLabel="small" inputName="item4" inputChecked="")
+              +buttonBarItem(inputLabel="middle" inputName="item4" inputChecked="")
+              +buttonBarItem(inputLabel="high" inputName="item4" inputChecked="checked")
+          input(type="text" placeholder="Comment")
+
+
+    +questionAnchor(id=6)
+    fieldset.row
+      legend List of items
+      
+      h3 Simple list
+      +collection(name="objectives" create="3")
+        .row
+          .small-2.columns
+            label.right.inline(for='simpleListInput') Label
+          .small-8.columns
+            input#simpleListInput(type='text' data-save-onBlur="" name="description" value=description)
+          .small-2.columns
+            a.right(data-remove-this="") remove
+            
+      form(data-collection="objectives")
+        input.button.small(type="submit" value="+ Add")
+
+      h3 Complex list
+      +collection(name="subobjectives" create="3")
+        .row
+          .small-4.columns
+            label Label
+            input(type='text' data-save-onBlur="" name="description" value=description)
+          .small-5.columns
+            label Importance 
+            .button-bar
+              ul.multiple-choice.button-group.radius
+                +buttonBarItem(inputLabel="none" inputName="item4" inputChecked="")
+                +buttonBarItem(inputLabel="small" inputName="item4" inputChecked="")
+                +buttonBarItem(inputLabel="middle" inputName="item4" inputChecked="")
+                +buttonBarItem(inputLabel="high" inputName="item4" inputChecked="checked")
+          .small-2.columns
+            label Lorem
+            input(type='text' data-save-onBlur="" name="description" value=description)
+          .small-1.columns
+            br
+            a.right(data-remove-this="") remove
+      form(data-collection="subobjectives")
+        input.button.small(type="submit" value="+ Add")
+
+
+    //- +questionAnchor(id=2)
+    //- fieldset.row
+    //-   legend 2. Objectives / purpose of the Technology
+    //-   p.form-help A single SLM Technology should cover a homogeneous set of natural (bio-physical) and human (socio-economic) conditions, hence should not be applied for instance to very dissimilar climatic or altitudinal zones or slope categories or to very dissimilar conditions of land tenure.
+    //-   +collection(name="objectives" create="3")
+    //-     .row.collapse
+    //-       .small-1.columns
+    //-         span.prefix {{index}}
+    //-       .small-9.columns
+    //-         input(type='text' data-save-onBlur="" name="description" value=description)
+    //-       .small-2.columns
+    //-         a.right(data-remove-this="") remove
+    //-   form(data-collection="objectives")
+    //-     input.button.small(type="submit" value="+ Add")
+
+    //- +questionAnchor(id=3)
+    //- fieldset.row
+    //-   legend 3. Land Use
+    //-   .row
+    //-     .small-3.columns
+    //-       span Cropland
+    //-     .small-5.columns
+    //-       .button-bar
+    //-         ul.multiple-choice.button-group.radius
+    //-           li
+    //-             label.tiny.button.secondary.active(href='#') 
+    //-               input(type="radio" name="importance01" value="none" checked)
+    //-               span None
+    //-           li
+    //-             label.tiny.button.secondary(href='#') 
+    //-               input(type="radio" name="importance01" value="1")
+    //-               span Little
+    //-           li
+    //-            label.tiny.button.secondary(href='#') 
+    //-               input(type="radio" name="importance01" value="2")
+    //-               span Medium
+    //-           li
+    //-             label.tiny.button.secondary(href='#') 
+    //-               input(type="radio" name="importance01" value="3")
+    //-               span Hight
+    //-     .small-4.columns
+    //-       input(type="text" placeholder="Comment")
+
+    //-   .row
+    //-     .small-3.columns
+    //-       span Grazing land
+    //-     .small-5.columns
+    //-       .button-bar
+    //-         ul.multiple-choice.button-group.radius
+    //-           li
+    //-             label.tiny.button.secondary.active(href='#') 
+    //-               input(type="radio" name="importance02" value="none" checked)
+    //-               span None
+    //-           li
+    //-             label.tiny.button.secondary(href='#') 
+    //-               input(type="radio" name="importance02" value="1")
+    //-               span Little
+    //-           li
+    //-            label.tiny.button.secondary(href='#') 
+    //-               input(type="radio" name="importance02" value="2")
+    //-               span Medium
+    //-           li
+    //-             label.tiny.button.secondary(href='#') 
+    //-               input(type="radio" name="importance02" value="3")
+    //-               span Hight
+    //-     .small-4.columns
+    //-       input(type="text" placeholder="Comment")
+
+    //-   .row
+    //-     .small-3.columns
+    //-       span Forest/woodlands
+    //-     .small-5.columns
+    //-       .button-bar
+    //-         ul.multiple-choice.button-group.radius
+    //-           li
+    //-             label.tiny.button.secondary.active(href='#') 
+    //-               input(type="radio" name="importance03" value="none" checked)
+    //-               span None
+    //-           li
+    //-             label.tiny.button.secondary(href='#') 
+    //-               input(type="radio" name="importance03" value="1")
+    //-               span Little
+    //-           li
+    //-            label.tiny.button.secondary(href='#') 
+    //-               input(type="radio" name="importance03" value="2")
+    //-               span Medium
+    //-           li
+    //-             label.tiny.button.secondary(href='#') 
+    //-               input(type="radio" name="importance03" value="3")
+    //-               span Hight
+    //-     .small-4.columns
+    //-       input(type="text" placeholder="Comment")
+
+
+  header.wizard-header
+    //- .inner-wrap
+    //-   .row
+    //-     h2 1. Specification of SLM Best Pratice
+    //-     span {{stepCompleted}} / 3 completed
+    //-     div.progress.radius
+    //-       span.meter(style="width:{{progress 3}}%")
+    //-     a.button(href="../index" data-toggle-boolean="form_guideline") I'm done
+    //-     .right
+    //-       a.button(href="" data-magellan-step="previous") △
+    //-       a.button(href="#question1" data-magellan-step="next") ▽

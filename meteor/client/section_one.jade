@@ -133,3 +133,9 @@ template(name="section_one")
 
 template(name="questionAnchor")
   a(name="question{{id}}" data-magellan-destination="question{{id}}")
+
+template(name="buttonBarItem")
+  li
+    label.tiny.button.secondary.active(for=inputLabel) 
+      span {{inputLabel}}
+    input(id=inputId type="radio" name=inputName value=inputLabel checked=inputChecked)
